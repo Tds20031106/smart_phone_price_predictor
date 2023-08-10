@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      
+        body{
+            background-image: url('https://cdn.glitch.global/10ca55af-05bf-4061-95c2-9e1e8548ce9c/layer.svg?v=1691685332459');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+      @media screen and (max-width: 600px) {
+            body{
+                background-image: url('https://cdn.glitch.global/10ca55af-05bf-4061-95c2-9e1e8548ce9c/layer1.svg?v=1691686065005');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <header class="text-gray-600 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <span class="ml-3 text-xl">Predictor</span>
+        </a>
+        <nav
+          class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/">Home</a>
+          <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/predict">Prediction</a>
+          <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1
+          class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+        >
+          Price Predictor
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+          Please fill the correct values to get the expected output
+        </p>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <form action="/p" method="POST">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label
+                  for="brand"
+                  class="block mb-2 text-sm font-medium text-gray-900 light:text-white"
+                  >Brand</label
+                >
+                <select
+                  id="brand" name="brand"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500"
+                >
+                  <option selected>Choose a Brand</option>
+                  <option value="0">Samsung</option>
+                  <option value="1">Realme</option>
+                  <option value="2">Vivo</option>
+                  <option value="3">Xiaomi</option>
+                  <option value="4">Apple</option>
+                  <option value="5">Google</option>
+                  <option value="6">Oneplus</option>
+                  <option value="7">Motorola</option>
+                  <option value="8">Oppo</option>
+                  <option value="10">Honor</option>
+                  <option value="9">Nokia</option>
+                  <option value="11">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label
+                  for="5g"
+                  class="block mb-2 text-sm font-medium text-gray-900 light:text-white"
+                  >5G?</label
+                >
+                <select
+                  id="5g" name="5g"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500"
+                >
+                  <option selected>Choose an option</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label
+                  for="rom"
+                  class="block mb-2 text-sm font-medium text-gray-900 light:text-white"
+                  >Internal Storage</label
+                >
+                <select
+                  id="rom" name="rom"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500"
+                >
+                  <option selected>Choose storage</option>
+                  <option value="4">4 GB</option>
+                  <option value="8">8 GB</option>
+                  <option value="16">16 GB</option>
+                  <option value="32">32 GB</option>
+                  <option value="64">64 GB</option>
+                  <option value="128">128 GB</option>
+                  <option value="256">256 GB</option>
+                  <option value="512">512 GB</option>
+                  <option value="1024">1024 GB</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label
+                  for="ram"
+                  class="block mb-2 text-sm font-medium text-gray-900 light:text-white"
+                  >RAM</label
+                >
+                <select
+                  id="ram" name="ram"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500"
+                >
+                  <option selected>Choose RAM</option>
+                  <option value="0.5">512 MB</option>
+                  <option value="1">1 GB</option>
+                  <option value="2">2 GB</option>
+                  <option value="3">3 GB</option>
+                  <option value="4">4 GB</option>
+                  <option value="6">6 GB</option>
+                  <option value="8">8 GB</option>
+                  <option value="12">12 GB</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <div class="relative">
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-gray-900 light:text-white"
+                  >How old is the phone? (in days)</label
+                >
+                <input
+                  id="message"
+                  name="days"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-10 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+            </div>
+
+            <div class="p-2 w-full">
+              <button
+                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+              >
+                Predict
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2
+              class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+            >
+              Predicted Price is
+            </h2>
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+            >
+              {{data}}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
