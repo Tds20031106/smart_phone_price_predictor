@@ -32,7 +32,7 @@ def p():
   
   try:
     res = model.predict([[eval(brand), eval(fiveg), eval(rom), eval(ram), eval(days)]])
-    res = "Rs. "+ str(round(res[0],2))
+    res = "Upto Rs. "+ str(round(res[0],2))
     return render_template('predict.html', data = res)
   except:
     return render_template('predict.html', data = "Please Enter Valid Values")
