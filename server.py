@@ -20,18 +20,21 @@ def p():
   fiveg = request.form.get('5g')
   rom = request.form.get('rom')
   ram = request.form.get('ram')
-  days = request.form['days']
+  battery = request.form['battery']
       
   
-  url = 'https://raw.githubusercontent.com/mannikdeep/usedmobile/main/main_price.csv'
+  url = 'https://raw.githubusercontent.com/namjyotr/projectml/main/smartphone_price.csv'
   main = pd.read_csv(url)
-  x = main.loc[:,'device_brand':'days_used']
+  x = main.loc[:,'device_brand':'battery']
   y = main['price']
   model = LinearRegression()
   model.fit(x,y)
   
   try:
-    res = model.predict([[eval(brand), eval(fiveg), eval(rom), eval(ram), eval(days)]])
+    if eval(battery) < 500 or eval(battery) > 9700:
+      return render_template('predict.html', data = "Please Enter Battery Value Between 500 - 9700 mAh")
+      
+    res = model.predict([[eval(brand), eval(fiveg), eval(rom), eval(ram), eval(battery)]])
     res = "Rs. "+ str(round(res[0],2))
     return render_template('predict.html', data = res)
   except:
