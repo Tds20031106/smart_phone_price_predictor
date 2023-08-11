@@ -32,7 +32,7 @@ def p():
   
   try:
     res = model.predict([[eval(brand), eval(fiveg), eval(rom), eval(ram), eval(days)]])
-    res = "Upto Rs. "+ str(round(res[0],2))
+    res = "Rs. "+ str(round(res[0],2))
     return render_template('predict.html', data = res)
   except:
     return render_template('predict.html', data = "Please Enter Valid Values")
@@ -41,6 +41,9 @@ def p():
 def contact():
   return render_template('contact.html')
   
+@app.route('/about')
+def about():
+  return render_template('about.html')
 
 if __name__ == '__main__':
   app.run(debug=True)

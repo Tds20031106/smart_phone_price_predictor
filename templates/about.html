@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body{
+            background-image: url('https://cdn.glitch.global/10ca55af-05bf-4061-95c2-9e1e8548ce9c/layer.svg?v=1691685332459');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        @media screen and (max-width: 600px) {
+            body{
+                background-image: url('https://cdn.glitch.global/10ca55af-05bf-4061-95c2-9e1e8548ce9c/layer1.svg?v=1691686065005');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <span class="ml-3 text-xl">Predictor</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/">Home</a>
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/predict">Prediction</a>
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/about">About</a>
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="/contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <div class="wrap">
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image" src="https://cdn.glitch.global/94787ff2-b837-48cc-a8fc-e24ca52bbdfd/mannik.jpeg?v=1691723929929">
+            <div class="title-flex">
+              <h3 class="box-title">Singh Mannik</h3>
+              <p class="user-follow-info">Student</p>
+            </div>
+            <p class="description">A great journey has been carried out with NIELT and special thanks to Sarwan Sir and Suman Mam for teaching us in such a easier and interesting way.</p>
+          </div>
+          <a href="https://www.instagram.com/singh_mannik/" class="button">Follow Mannik</a>
+        </div>
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image" src="https://cdn.glitch.global/94787ff2-b837-48cc-a8fc-e24ca52bbdfd/IMG_6851.jpg?v=1691688862834">
+            <div class="title-flex">
+              <h3 class="box-title">Lalit Kumar</h3>
+              <p class="user-follow-info">Student</p>
+            </div>
+            <p class="description">It was a great experience in Nielt , to get learn new things about Ai and machine learning thanks to our guidance  Dr sarwan singh and Ms. Suman</p>
+          </div>
+          <a href="https://www.instagram.com/lalit.ku_mar/" class="button">Follow Lalit</a>
+        </div>
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image" src="https://cdn.glitch.global/10ca55af-05bf-4061-95c2-9e1e8548ce9c/WhatsApp%20Image%202023-08-11%20at%2019.56.09.jpg?v=1691764009330">
+            <div class="title-flex">
+              <h3 class="box-title">Namjyot Singh Rayat</h3>
+              <p class="user-follow-info">Student</p>
+            </div>
+            <p class="description">It was such a great experience we got from NIELIT,
+      All thanks to the guardians specially Dr.Sarwan Sir and Suman Ma'am.</p>
+          </div>
+          <a href="https://www.instagram.com/nxmjyot/" class="button">Follow Namjyot</a>
+        </div>
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image" src="https://cdn.glitch.global/94787ff2-b837-48cc-a8fc-e24ca52bbdfd/IMG_6493.jpg?v=1691689597729">
+            <div class="title-flex">
+              <h3 class="box-title">Vinay</h3>
+              <p class="user-follow-info">Student</p>
+            </div>
+            <p class="description">It was fabulous experienced we got from NIELIT .
+      All thanks to the mentors specially Dr.Sarwan sir and Suman mam.</p>
+          </div>
+          <a href="https://www.instagram.com/vinay_chauhan099/" class="button">Follow Vinay</a>
+        </div>
+      </div>
+</body>
+</html>
