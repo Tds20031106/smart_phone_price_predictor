@@ -35,7 +35,7 @@ def p():
       return render_template('predict.html', data = "Please Enter Battery Value Between 500 - 9700 mAh")
       
     res = model.predict([[eval(brand), eval(fiveg), eval(rom), eval(ram), eval(battery)]])
-    res = "Rs. "+ str(round(res[0],2))
+    res = "Upto Rs. "+ str(round(res[0],2))
     return render_template('predict.html', data = res)
   except:
     return render_template('predict.html', data = "Please Enter Valid Values")
